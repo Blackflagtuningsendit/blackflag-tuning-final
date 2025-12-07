@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackflag Tuning - ECU Unlocks, Swag & Apps | Full Send</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <script src="https://js.stripe.com/v3/"></script> <!-- For checkout -->
+</head>
+<body>
+    <video autoplay muted loop id="hero-video">
+        <source src="images/hero-rev.mp4" type="video/mp4"> <!-- Replace with your video or use https://stock video link -->
+        Your browser doesn't support video.
+    </video>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">BLACKFLAG TUNING</div>
+            <ul class="nav-menu">
+                <li><a href="#unlocks">Unlocks</a></li>
+                <li><a href="#apps">Apps</a></li>
+                <li><a href="#swag">Swag</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="cart-icon">🛒 <span id="cart-count">0</span></div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>MAX POWER. FULL SEND.</h1>
+            <p>ECU Unlocks | Custom Apps | Elite Swag</p>
+            <a href="#unlocks" class="cta-btn">Unlock Now</a>
+        </div>
+    </section>
+
+    <section id="unlocks" class="unlocks">
+        <h2>ECU Unlocks</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <h3>GM · Ford · FCA · Toyota</h3>
+                <p>Single Vehicle Unlock</p>
+                <span class="price">$199 ea</span>
+                <button onclick="addToCart('GM Unlock', 199)">Buy Key</button>
+            </div>
+            <div class="product-card">
+                <h3>5-Key Bundle</h3>
+                <p>All Unlocks Included</p>
+                <span class="price">$499</span>
+                <button onclick="addToCart('5-Key Bundle', 499)">Buy Bundle</button>
+            </div>
+            <div class="product-card">
+                <h3>Shop License</h3>
+                <p>Full Tuning Suite</p>
+                <span class="price">$999</span>
+                <button onclick="addToCart('Shop License', 999)">Buy License</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="apps" class="apps">
+        <h2>Dash Apps</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <h3>AI Tuner</h3>
+                <p>Windows + Mac Download</p>
+                <span class="price">$199</span>
+                <button onclick="downloadApp('AI Tuner')">Download</button>
+            </div>
+            <div class="product-card">
+                <h3>Dash Logging - Send It</h3>
+                <p>Real-Time Data Logger</p>
+                <span class="price">$199</span>
+                <button onclick="downloadApp('Dash Logging')">Download</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="swag" class="swag">
+        <h2>Swag Store</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="images/patriot-tee.jpg" alt="Patriot Pirate Tee">
+                <h3>Patriot Pirate Tee</h3>
+                <span class="price">$35</span>
+                <button onclick="addToCart('Patriot Tee', 35)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/blackflag-hoodie.jpg" alt="Black Flag Hoodie">
+                <h3>Black Flag Hoodie</h3>
+                <span class="price">$65</span>
+                <button onclick="addToCart('Black Flag Hoodie', 65)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/betsy-hat.jpg" alt="Betsy Ross Skull Hat">
+                <h3>Betsy Ross Skull Hat</h3>
+                <span class="price">$28</span>
+                <button onclick="addToCart('Betsy Hat', 28)">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="images/custom-patch.jpg" alt="Custom Patch">
+                <h3>Custom Patch / Decals & Stickers</h3>
+                <span class="price">$12</span>
+                <button onclick="addToCart('Custom Patch', 12)">Add to Cart</button>
+            </div>
+            <!-- Add more swag cards here for 30+ items, e.g., copy-paste with new images/prices -->
+        </div>
+        <div id="cart" class="cart">
+            <h3>Cart (<span id="cart-total-items">0</span>)</h3>
+            <div id="cart-items"></div>
+            <span id="cart-total">$0</span>
+            <button onclick="checkout()">Checkout with Stripe</button>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+        <h2>Customer Builds & Dyno Graphs</h2>
+        <div class="gallery-grid">
+            <img src="images/car1.jpg" alt="Tuned GM Truck">
+            <img src="images/car2.jpg" alt="Ford Dyno Run">
+            <img src="images/dyno-graph1.png" alt="Dyno Chart">
+            <!-- Add more images/dyno PNGs -->
+        </div>
+        <button onclick="toggleLightShow()">Toggle Light-Show Mode</button>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Get In Touch</h2>
+        <form id="contact-form">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Your Build Inquiry"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Blackflag Tuning. Full Send or Go Home. 🚩</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
